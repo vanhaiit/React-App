@@ -6,6 +6,8 @@ export const actFetchProductsRequest = () => {
     return dispatch => {
         return callApi('products', 'GET', null).then(result => {
             dispatch(actFetchProducts(result.data))
+        }).catch(error => {
+            console.log(error);
         })
     }
 
@@ -24,6 +26,8 @@ export const actAddProductRequest = product => {
     return dispatch => {
         return callApi('products', 'POST', product).then(result => {
             dispatch(actAddProduct(result.data))
+        }).catch(error => {
+            console.log(error);
         })
     }
 }
@@ -41,6 +45,8 @@ export const actDeleteProductRequest = id => {
     return dispatch => {
         return callApi(`products/${id}`, 'DELETE', null).then(result => {
             dispatch(actDeleteProduct(id))
+        }).catch(error => {
+            console.log(error);
         })
     }
 }
@@ -58,6 +64,8 @@ export const actGetProductRequest = id => {
     return dispatch => {
         return callApi(`products/${id}`, 'GET', null).then(result => {
             dispatch(actGetProduct(result.data))
+        }).catch(error => {
+            console.log(error);
         })
     }
 }
@@ -73,6 +81,8 @@ export const updateProductRequest = product => {
     return dispatch => {
         return callApi(`products/${product.id}`, 'PUT', product).then(result => {
             dispatch(updateProduct(result.data))
+        }).catch(error => {
+            console.log(error);
         })
     }
 }
