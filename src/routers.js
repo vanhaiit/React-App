@@ -1,9 +1,9 @@
 import React from 'react'
-import HomePage from './pages/HomePage/HomePage';
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import ProductListPage from './pages/ProductListPage/ProductListPage';
-import ProductActionPage from './pages/ProductActionPage/ProductActionPage';
-import CustomerListPage from './pages/CustomerListPage/CustomerListPage';
+import HomePage from './pages/home/home';
+import NotFoundPage from './pages/not-found/not-found';
+import ProductListPage from './pages/products/product-list';
+import ProductActionPage from './pages/products/product-action';
+import CustomerListPage from './pages/customer/customer-list';
 const routes = [
     {
         path: '/',

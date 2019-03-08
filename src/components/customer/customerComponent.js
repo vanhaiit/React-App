@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CustomerItem extends Component {
+class CustomerComponent extends Component {
     onDelete = (id) => {
         if (confirm('Bạn chắc rằng muốn xóa khách hàng này.!')) {//eslint-disable-line
             this.props.onDelete(id)
@@ -25,4 +25,4 @@ class CustomerItem extends Component {
     }
 }
 
-export default CustomerItem;
+export default CustomerComponent;

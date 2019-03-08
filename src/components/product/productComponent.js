@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class ProductItem extends Component {
+class ProductComponent extends Component {
     onDelete = (id) => {
         if (confirm('Bạn chắc rằng muốn xóa sản phẩm này.!')) {//eslint-disable-line
             this.props.onDelete(id)
@@ -31,4 +31,4 @@ class ProductItem extends Component {
     }
 }
 
-export default ProductItem;
+export default ProductComponent;

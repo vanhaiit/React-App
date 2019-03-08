@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class CustomerList extends Component {
+class CustomerListComponent extends Component {
     render() {
         return (
             <div className="products">
@@ -26,4 +26,4 @@ class CustomerList extends Component {
     }
 }
 
-export default CustomerList;
+export default CustomerListComponent;

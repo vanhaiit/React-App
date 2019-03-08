@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import Menu from './components/Menu/Menu';
 import routes from './routers';
 import './App.css';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-import Header from './components/Header/Header';
+import HeaderComponent from './components/header/headerComponent';
+import MenuComponent from './components/menu/menuComponent';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <Header></Header>
+          <HeaderComponent />
           <div className="container-fluid">
-            <Menu></Menu>
+            <MenuComponent />
             <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
               <div className="container">
                 <div className="row">

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
-import CustomerItem from '../../components/CustomerItem/CustomerItem';
 import { connect } from 'react-redux';
 import { actFetchCustomerRequest, actDeleteCustomerRequest } from '../../actions';
-import CustomerList from '../../components/CustomerList/CustomerList';
+import CustomerList from '../../components/customer/customerListComponent';
+import CustomerItem from '../../components/customer/customerComponent';
 
 class CustomerListPage extends Component {
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import ProductList from './../../components/ProductList/ProductList';
-import ProductItem from './../../components/ProductItem/ProductItem';
 import { connect } from 'react-redux';
 import { actFetchProductsRequest, actDeleteProductRequest } from '../../actions';
 import { Link } from 'react-router-dom'
+import ProductList from '../../components/product/productListComponent';
+import ProductItem from '../../components/product/productComponent';
 
 class ProductListPage extends Component {
 

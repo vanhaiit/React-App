@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class Header extends Component {
+class HeaderComponent extends Component {
     render() {
         return (
             <nav className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
@@ -17,4 +17,4 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default HeaderComponent;

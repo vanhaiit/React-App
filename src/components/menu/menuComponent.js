@@ -39,7 +39,7 @@ const MenuLink = ({ label, to, aciveExact }) => {
     );
 }
 
-class Menu extends Component {
+class MenuComponent extends Component {
     render() {
         return (
             <nav className="col-md-2 d-none d-md-block bg-light sidebar">
@@ -66,4 +66,4 @@ class Menu extends Component {
     }
 }
 
-export default Menu;
+export default MenuComponent;
