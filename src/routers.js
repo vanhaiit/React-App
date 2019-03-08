@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage/HomePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import ProductListPage from './pages/ProductListPage/ProductListPage';
 import ProductActionPage from './pages/ProductActionPage/ProductActionPage';
+import CustomerListPage from './pages/CustomerListPage/CustomerListPage';
 const routes = [
     {
         path: '/',
@@ -22,6 +23,11 @@ const routes = [
         path: '/products/:id',
         exact: true,
         main: ({ match, history }) => <ProductActionPage match={match} history={history}></ProductActionPage>
+    },
+    {
+        path: '/customers',
+        exact: true,
+        main: ({ history }) => <CustomerListPage history={history}></CustomerListPage>
     },
     {
         path: '',

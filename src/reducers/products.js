@@ -3,7 +3,7 @@ var initialState = [];
 var findIndex = (products, id) => {
     var result = -1;
     products.forEach((product, index) => {
-        if (product.id == id) {
+        if (product.id === id) {
             result = index;
         }
     });
@@ -24,7 +24,7 @@ const products = (state = initialState, action) => {
         case Type.DELETE_PRODUCT:
             index = findIndex(state, action.id);
             state.splice(index, 1)
-            return [...state]
+            return [...state];
 
         case Type.UPDATE_PRODUCT:
             index = findIndex(state, action.product.id);

@@ -11,6 +11,11 @@ const menus = [
         name: 'Sản phẩm',
         to: '/products',
         exact: false
+    },
+    {
+        name: 'Khách hàng',
+        to: '/customers',
+        exact: false
     }
 ]
 const MenuLink = ({ label, to, aciveExact }) => {

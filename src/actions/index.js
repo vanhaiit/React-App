@@ -12,6 +12,7 @@ export const actFetchProductsRequest = () => {
     }
 
 }
+
 export const actFetchProducts = (products) => {
     return {
         type: Types.FETCH_PRODUCTS,
@@ -60,6 +61,7 @@ export const actDeleteProduct = id => {
 /**END:delete products */
 
 /**BIGIN: edit products */
+
 export const actGetProductRequest = id => {
     return dispatch => {
         return callApi(`products/${id}`, 'GET', null).then(result => {
@@ -93,4 +95,40 @@ export const updateProduct = product => {
         product
     }
 }
+
 /**END:edit product */
+
+export const actFetchCustomerRequest = () => {
+
+    return dispatch => {
+        return callApi('customers', 'GET', null).then(result => {
+            dispatch(actFetchCustomer(result.data))
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+}
+
+export const actFetchCustomer = customers => {
+    return {
+        type: Types.FETCH_CUSTOMERS,
+        customers
+    }
+}
+
+export const actDeleteCustomerRequest = id => {
+    return dispatch => {
+        return callApi(`customers/${id}`, 'DELETE', null).then(result => {
+            dispatch(actDeleteCustomer(id))
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+}
+
+export const actDeleteCustomer = id => {
+    return {
+        type: Types.DELETE_CUSTOMER,
+        id
+    }
+}
