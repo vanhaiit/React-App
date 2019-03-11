@@ -16,7 +16,9 @@ class LegacyWelcomeClass extends Component {
       })
     }
     return <Switch>{result}</Switch>
+
   }
+
   render() {
     const { t, i18n } = this.props;
     const changeLanguage = lng => {
@@ -31,8 +33,9 @@ class LegacyWelcomeClass extends Component {
               <MenuComponent />
               <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
                 <div className="container">
+                  <h2>{t('title')}</h2>;
                   <div className="row">
-                    <h2>{t('title')}</h2>;
+
                     {this.showContentMenus(routes)}
                   </div>
                 </div>
@@ -46,17 +49,10 @@ class LegacyWelcomeClass extends Component {
 }
 const Welcome = withTranslation()(LegacyWelcomeClass);
 
-// loading component for suspence fallback
-const Loader = () => (
-  <div className="App">
-    <div>loading...</div>
-  </div>
-);
-
 // here app catches the suspense from page in case translations are not yet loaded
 export default function App() {
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense fallback={<div>loading...</div>}>
       <Welcome />
     </Suspense>
   );
