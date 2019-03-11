@@ -1,20 +1,14 @@
-import React, { Suspense } from 'react';
+import React, { Component, Suspense } from 'react';
 import routes from './routers';
 import './App.css';
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import HeaderComponent from './components/header/headerComponent';
 import MenuComponent from './components/menu/menuComponent';
+import { withTranslation } from 'react-i18next';
 
-import { useTranslation } from 'react-i18next';
-
-
-function Main() {
-  const { t, i18n } = useTranslation();
-  const changeLanguage = lng => {
-    i18n.changeLanguage(lng);
-  };
-
-  const showContentMenus = (routes) => {
+// use hoc for class based components
+class LegacyWelcomeClass extends Component {
+  showContentMenus = (routes) => {
     let result = null;
     if (routes.length > 0) {
       result = routes.map((route, index) => {
@@ -23,27 +17,34 @@ function Main() {
     }
     return <Switch>{result}</Switch>
   }
-  return (
-    <div className="App">
-      <Router>
-        <div className="App">
-          <HeaderComponent onChangeLng={changeLanguage} />
-          <div className="container-fluid">
-            <MenuComponent />
-            <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-              <div className="container">
-                <div className="row">
-                  <h2>{t('title')}</h2>;
-                  {showContentMenus(routes)}
+  render() {
+    const { t, i18n } = this.props;
+    const changeLanguage = lng => {
+      i18n.changeLanguage(lng);
+    };
+    return (
+      <div className="App">
+        <Router>
+          <div className="App">
+            <HeaderComponent onChangeLng={changeLanguage} />
+            <div className="container-fluid">
+              <MenuComponent />
+              <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div className="container">
+                  <div className="row">
+                    <h2>{t('title')}</h2>;
+                    {this.showContentMenus(routes)}
+                  </div>
                 </div>
-              </div>
-            </main>
+              </main>
+            </div>
           </div>
-        </div>
-      </Router>
-    </div>
-  );
+        </Router>
+      </div>
+    );
+  }
 }
+const Welcome = withTranslation()(LegacyWelcomeClass);
 
 // loading component for suspence fallback
 const Loader = () => (
@@ -56,7 +57,7 @@ const Loader = () => (
 export default function App() {
   return (
     <Suspense fallback={<Loader />}>
-      <Main />
+      <Welcome />
     </Suspense>
   );
 }
