@@ -33,9 +33,8 @@ class LegacyWelcomeClass extends Component {
               <MenuComponent />
               <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
                 <div className="container">
-                  <h2>{t('title')}</h2>;
+                  <h2>{t('title')}</h2>
                   <div className="row">
-
                     {this.showContentMenus(routes)}
                   </div>
                 </div>
