@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 
 class HeaderComponent extends Component {
+
+    onChangeLng = (lng) => {
+        this.props.onChangeLng(lng)
+    }
+
     render() {
         return (
             <nav className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
@@ -9,7 +14,8 @@ class HeaderComponent extends Component {
                 <input className="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" />
                 <ul className="navbar-nav px-3">
                     <li className="nav-item text-nowrap">
-                        <a className="nav-link" href="#">Sign out</a>
+                        <button type="button" class="btn btn-primary btn-sm" onClick={() => this.onChangeLng('vn')}>vn</button>
+                        <button type="button" class="btn btn-primary btn-sm ml-2" onClick={() => this.onChangeLng('en')}>en</button>
                     </li>
                 </ul>
             </nav>

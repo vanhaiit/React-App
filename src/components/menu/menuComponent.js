@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom'
-
+import { Trans } from 'react-i18next';
 const menus = [
     {
         name: 'Trang chủ',
@@ -18,21 +18,23 @@ const menus = [
         exact: false
     }
 ]
-const MenuLink = ({ label, to, aciveExact }) => {
+const MenuLink = ({ label, to, aciveExact, index }) => {
+
     return (
         <Route
             path={to}
             exact={aciveExact}
             children={({ match }) => {
                 var active = match ? 'active' : '';
+                var tran = `menu.${index}`
                 return (
                     <li className="nav-item">
                         <Link to={to} className={`nav-link ${active}`}>
-                            {label}
+                            <Trans i18nKey={tran}>
+                                {label}
+                            </Trans>
                         </Link>
                     </li>
-
-
                 );
             }}
         />
@@ -40,6 +42,7 @@ const MenuLink = ({ label, to, aciveExact }) => {
 }
 
 class MenuComponent extends Component {
+
     render() {
         return (
             <nav className="col-md-2 d-none d-md-block bg-light sidebar">
@@ -49,7 +52,6 @@ class MenuComponent extends Component {
                     </ul>
                 </div>
             </nav>
-
         );
     }
     showMenus = (menus) => {
@@ -57,11 +59,13 @@ class MenuComponent extends Component {
         if (menus.length > 0) {
             result = menus.map((menu, index) => {
                 return (
-                    <MenuLink key={index} label={menu.name} to={menu.to} aciveExact={menu.exact}>
+                    <MenuLink key={index} label={menu.name} to={menu.to} aciveExact={menu.exact} index={index}>
                     </MenuLink>
                 );
             })
         }
+        console.log(result);
+
         return result;
     }
 }
