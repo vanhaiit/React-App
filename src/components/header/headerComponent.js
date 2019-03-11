@@ -14,8 +14,8 @@ class HeaderComponent extends Component {
                 <input className="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" />
                 <ul className="navbar-nav px-3">
                     <li className="nav-item text-nowrap">
-                        <button type="button" class="btn btn-primary btn-sm" onClick={() => this.onChangeLng('vn')}>vn</button>
-                        <button type="button" class="btn btn-primary btn-sm ml-2" onClick={() => this.onChangeLng('en')}>en</button>
+                        <button type="button" className="btn btn-primary btn-sm" onClick={() => this.onChangeLng('vn')}>vn</button>
+                        <button type="button" className="btn btn-primary btn-sm ml-2" onClick={() => this.onChangeLng('en')}>en</button>
                     </li>
                 </ul>
             </nav>

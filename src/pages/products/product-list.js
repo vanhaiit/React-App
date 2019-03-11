@@ -4,6 +4,7 @@ import { actFetchProductsRequest, actDeleteProductRequest } from '../../actions'
 import { Link } from 'react-router-dom'
 import ProductList from '../../components/product/productListComponent';
 import ProductItem from '../../components/product/productComponent';
+import { Trans } from 'react-i18next';
 
 class ProductListPage extends Component {
 
@@ -15,16 +16,16 @@ class ProductListPage extends Component {
         this.props.onDeleteProduct(id)
     }
 
-
     render() {
         var { products } = this.props;
+
         return (
             <div className="container mt-5">
-                <Link to='/products/add' type="button" className="btn btn-primary mt-2 mb-2">Thêm mới</Link>
+                <Link to='/products/add' type="button" className="btn btn-primary mt-2 mb-2"><Trans i18nKey='add' /></Link>
                 <ProductList>
                     {this.showProducts(products)}
                 </ProductList>
-            </div>
+            </div >
         );
     }
 

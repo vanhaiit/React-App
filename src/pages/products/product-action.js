@@ -29,7 +29,6 @@ class ProductActionPage extends Component {
                 txtPrice: itemEditing.price,
                 chkbStatus: itemEditing.status
             })
-            console.log(itemEditing);
         }
     }
 

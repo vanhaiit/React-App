@@ -64,8 +64,6 @@ class MenuComponent extends Component {
                 );
             })
         }
-        console.log(result);
-
         return result;
     }
 }

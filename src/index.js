@@ -7,7 +7,6 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import appReducers from './reducers/index';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-// import i18n (needs to be bundled ;))
 import './i18n';
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
